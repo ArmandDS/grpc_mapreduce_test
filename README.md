@@ -95,12 +95,13 @@ The unit test for worker:
 
 
 # TODOs:
-make worker failure recovery
-make some more test
+* make worker failure recovery
+* make some more test
 
 # Result
-local test
-run master and all workers on localhost
+* local test
+* run master and all workers on localhost
+* The __result__ folder has the output files containing the frequency of each work in the input 
 
 # Testing
 some basic test are under folder test, please be aware of the data directory
