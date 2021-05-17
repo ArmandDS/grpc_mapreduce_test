@@ -1,0 +1,72 @@
+plugins {
+    id 'java'
+    id 'com.google.protobuf' version '0.8.4'
+    id 'idea'
+}
+
+group 'org.grpctest'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { // The google mirror is less flaky than mavenCentral()
+        url "https://maven-central.storage-download.googleapis.com/maven2/" }
+    mavenCentral()
+}
+
+dependencies {
+    //grpc
+    compile 'io.grpc:grpc-netty-shaded:1.37.0'
+    compile 'io.grpc:grpc-protobuf:1.37.0'
+    compile 'io.grpc:grpc-stub:1.37.0'
+    compile group: 'net.sourceforge.argparse4j', name: 'argparse4j', version: '0.2.0'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
+
+    testImplementation "io.grpc:grpc-testing:1.16.1"
+    testImplementation "junit:junit:4.12"
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.12.0"
+    }
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.37.0'
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+
+//create a  Jar with all dependencies
+task createJarDriver(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Main-Class': 'com.grpctest.mapreduce.driver.MapReduceServer'
+        archiveBaseName = 'MRDriver'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+task createJarWorker(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Main-Class': 'com.grpctest.mapreduce.worker.MapReduceWorker'
+        archiveBaseName = 'MRWorker'
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

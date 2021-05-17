@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package mapreduce;
+
+option java_package = "com.proto.mapreduce";
+
+option java_multiple_files = true;
+
+message TaskAssigmentRequest {
+   string taskID = 1;
+   int32 command = 2;
+};
+
+message taskResponse {
+   int32 taskID = 1;
+   int32 command = 2;
+   string  fileName = 3;
+   int32 n_task = 4;
+};
+
+service TaskService {
+    rpc Taskresponse(TaskAssigmentRequest) returns (taskResponse) {};
+};

@@ -1,0 +1,4 @@
+one 1
+can 1
+play 1
+accurately 1
