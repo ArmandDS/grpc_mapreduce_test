@@ -101,7 +101,7 @@ The unit test for worker:
 # Result
 * local test
 * run master and all workers on localhost
-* The __result__ folder has the output files containing the frequency of each work in the input 
+* The __result__ folder has the output files containing the frequency of each work in the input, __with N= 6 and M = 4__
 
 # Testing
 some basic test are under folder test, please be aware of the data directory
