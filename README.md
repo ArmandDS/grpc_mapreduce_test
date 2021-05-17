@@ -82,16 +82,16 @@ The Driver started:
 ![Image](https://github.com/ArmandDS/grpc_mapreduce_test/blob/main/images/driver_started.PNG)
 
 The Worker started: 
-![Image](http://url/a.png)
+![Image](https://github.com/ArmandDS/grpc_mapreduce_test/blob/main/images/worker_started.PNG)
 
 The Driver and worker running:
-![Image](http://url/a.png)
+![Image](https://github.com/ArmandDS/grpc_mapreduce_test/blob/main/images/driver_worker.PNG)
 
 The unit test for driver:
-![Image](http://url/a.png)
+![Image](https://github.com/ArmandDS/grpc_mapreduce_test/blob/main/images/test_driver.PNG)
 
 The unit test for worker:
-![Image](http://url/a.png)
+![Image](https://github.com/ArmandDS/grpc_mapreduce_test/blob/main/images/test_worker.PNG)
 
 
 # TODOs:
