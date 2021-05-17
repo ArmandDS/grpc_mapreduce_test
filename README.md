@@ -30,7 +30,7 @@ The project uses Maven/gradle to manage build.
 Please make sure to update tests as appropriate.
 
 # Usage
- On folder executables are the .jar for the driver and the worker, it requires a folder /inputs with the data on the same directory.
+ On the folder __executables__ are the .jar files for the driver and the worker, it requires a folder __/inputs__ with the data on the same directory.
 
 ### run the Driver from terminal
  ```bash
@@ -79,7 +79,7 @@ Function:
 
 # Some images of the driver and worker running
 The Driver started: 
-![Image](http://url/a.png)
+![Image](https://github.com/ArmandDS/grpc_mapreduce_test/blob/main/images/driver_started.PNG)
 
 The Worker started: 
 ![Image](http://url/a.png)
