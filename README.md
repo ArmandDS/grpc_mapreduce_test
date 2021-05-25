@@ -1,6 +1,6 @@
 # gRPC MapReduce Implementation 
 
-MapReduce in Java for word count, make with java, gradle and intellij
+Very Basic MapReduce in Java for word count, make with java, gradle and intellij
 
 ## Introduction
 
